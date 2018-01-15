@@ -1,1 +1,4 @@
 config*.*
+*.sql
+logs/
+desktop.ini

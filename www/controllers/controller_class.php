@@ -97,7 +97,7 @@ abstract class Controller extends AbstractController {
 		$header->meta(false, "og:image", UseSEF::getImage(URL::current()) ? UseSEF::getImage(URL::current()) : Config::ADDRESS."/".Config::DIR_IMG_FOOD.$this->promo_img, false);
 		$header->favicon = "http://herbal24.ru/favicon.ico";
 		$header->favicon_1 = "http://herbal24.ru/favicon.ico";
-		$header->css = array("/styles/main.css", "/styles/prettify.css","/styles/animate.css");
+		$header->css = array("/styles/main.css?v=2", "/styles/prettify.css","/styles/animate.css");
 		$header->js = array("/js/jquery-1.10.2.min.js", "/js/wow.min.js", "/js/jquery.nicescroll.min.js", "/js/functions.js", "/js/validator.js", "/js/prettify.js", "https://yastatic.net/share2/share.js");
 		return $header;
 	}

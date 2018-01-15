@@ -7,7 +7,7 @@ class Captcha {
 	const FONT_SIZE = 16;
 	const LET_AMOUNT = 4;
 	const BG_LET_AMOUNT = 30;
-	const FONT = "fonts/verdana.ttf";
+	const FONT = "/fonts/verdana.ttf";
 	
 	private static $letters = array("a", "b", "c", "d", "e", "f", "g");
 	private static $colors = array(90, 110, 130, 150, 170, 190, 210);
@@ -22,7 +22,7 @@ class Captcha {
 			$color = imagecolorallocatealpha($src, rand(0, 255), rand(0, 255), rand(0, 255), 100);
 			$letter = self::$letters[rand(0, count(self::$letters) - 1)];
 			$size = rand(self::FONT_SIZE - 2, self::FONT_SIZE + 2);
-			imagettftext($src, $size, rand(0, 45), rand(self::WIDTH * 0.1, self::WIDTH * 0.9), rand(self::HEIGHT * 0.1, self::HEIGHT * 0.9), $color, self::FONT, $letter);
+			imagettftext($src, $size, rand(0, 45), rand(self::WIDTH * 0.1, self::WIDTH * 0.9), rand(self::HEIGHT * 0.1, self::HEIGHT * 0.9), $color, $_SERVER['DOCUMENT_ROOT'].self::FONT, $letter);
 		}
 		$code = "";
 		for ($i = 0; $i < self::LET_AMOUNT; $i++) {
@@ -33,7 +33,7 @@ class Captcha {
 			$size = rand(self::FONT_SIZE * 2 - 2, self::FONT_SIZE * 2 + 2);
 			$x = ($i + 1) * self::FONT_SIZE + rand(1, 5);
 			$y = ((self::HEIGHT * 2) / 3) + rand(0, 5);
-			imagettftext($src, $size, rand(0, 15), $x, $y, $color, self::FONT, $letter);
+			imagettftext($src, $size, rand(0, 15), $x, $y, $color, $_SERVER['DOCUMENT_ROOT'].self::FONT, $letter);
 			$code .= $letter;
 		}
 		$_SESSION["rand_code"] = $code;

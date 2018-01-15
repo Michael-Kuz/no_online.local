@@ -172,15 +172,17 @@ $(document).ready( function() {
 	$(".rub").bind("mouseout",function(event){
 		$("#interactive_message").hide();	
 	});
-	/*=== функция открывающая окно формы обратного звонка ===*/
-	$("header div.cart").bind("click",function(event){
-		$("#call_back").show(100);	
+	/*=== функция открывающая окно "Политика безопасности" ===*/
+	$("#register a, .win-security-policy").bind("click",function(event){
+		$("#security-policy").animate({opacity: 'show'}, 100);	
 	});
-	/*=== функция закрывающая окно формы обратного звонка ===*/
+	/*=== функция закрывающая окно формы обратного звонка, окна Политика безопасности ===*/
 	$(".close_button").bind("click",function(event){
 		$("#call_back").hide(100);	
 		$(".success").hide(100);
+        $("#security-policy").hide(100); 
 	});
+		
 	/*=== передача данных в форме обратного звонка через Ajax ===*/
 	function funcB(){
 	}

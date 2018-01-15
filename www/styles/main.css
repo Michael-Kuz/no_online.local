@@ -362,7 +362,7 @@ header div.cart div p {
 }
 #promo_left {
 	margin-left: 40px;
-	padding-top: 24px;
+	padding-top: 6px;
 	float: left;
 }
 #promo_image {
@@ -1876,12 +1876,12 @@ p.delivery_info span {
 	margin-left: 129px;
 }
 #cart_trust-1 input[name="phone"]{
-	margin-left: 27px;
+	margin-left: 26px;
 	position: relative;
 	top: -10px;
 }
 #cart_trust-1 input[name="email"]{
-	margin-left: 130px;
+	margin-left: 128px;
 }
 #cart_trust-1 label[for="comment"]{
 	position: relative;

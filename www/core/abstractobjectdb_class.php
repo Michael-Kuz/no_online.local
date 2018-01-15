@@ -343,7 +343,7 @@ abstract class AbstractObjectDB {
 		$results = ObjectDB::buildMultiple($class, $results);
 		foreach ($results as $result) {
 			for ($j = 0; $j < count($fields); $j++) {
-				$result->$fields[$j] = mb_strtolower(strip_tags($result->$fields[$j]));
+				$result->{$fields[$j]} = mb_strtolower(strip_tags($result->{$fields[$j]}));
 			}
 			$data[$result->id] = $result;
 			$data[$result->id]->relevant = self::getRelevantForSearch($result, $fields, $array_words);
@@ -356,7 +356,7 @@ abstract class AbstractObjectDB {
 		$relevant = 0;
 		for ($i = 0; $i < count($fields); $i++)
 			for ($j = 0; $j < count($array_words); $j++)
-				$relevant += substr_count($result->$fields[$i], $array_words[$j]);
+				$relevant += substr_count($result->{$fields[$i]}, $array_words[$j]);
 		return $relevant;
 	}
 	

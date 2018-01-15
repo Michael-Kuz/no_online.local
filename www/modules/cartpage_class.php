@@ -22,7 +22,7 @@ class CartPage extends ModuleHornav {
 		$this->add("message");
 		$this->add("error_code");
 		$this->add("cart_list",$this->cart);
-		$this->add("cart_summa",count($this->cart)<3 ? 0 : $this->cart["cart_summa"] );
+		$this->add("cart_summa", !isset($this->cart) ? 0 : $this->cart["cart_summa"] );
 		$this->add("name","cart");
 		$this->add("action",URL::get( "function.php",NULL,array("func"=>"update_cart") ) );
 		$this->add("method","get");
