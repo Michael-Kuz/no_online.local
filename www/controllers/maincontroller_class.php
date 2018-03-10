@@ -76,7 +76,7 @@ class MainController extends Controller {
 		$message_name = "contacts";
 		if( $this->request->contact_form ){
 			$captcha = $this->request->contact_captcha;
-			$checks = array(array(Captcha::check($captcha), $captcha, "ERROR_CAPTCHA_CONTENT"));
+			$checks = array(array(Captcha::check($captcha), true, "ERROR_CAPTCHA_CONTENT"));
 			if( $this->fp->checks($message_name, $checks) ){
 				$this->mail->setFromName( $this->request->contact_name );
 				$this->mail->setFrom( $this->request->contact_email );
@@ -466,7 +466,7 @@ class MainController extends Controller {
 							array("email",$this->request->email), 
 							array("note",$this->request->comment) );
 			$captcha = $this->request->captcha;
-			$checks = array(array(Captcha::check($captcha), $captcha, "001:ERROR_CAPTCHA_CONTENT"));
+			$checks = array(array(Captcha::check($captcha), true, "001:ERROR_CAPTCHA_CONTENT"));
 			$new_order = $this->fp->process($message_name, $new_order, $fields, $checks);// делаем проверки и сохраняем в базе данных
 			if( $new_order instanceof OrderDB ){ // если обьект создан и его тип соответствует обьекту OrderDB
 				$new_order->number = date("dmy").sprintf( "%04d",$new_order->id); // Формируем номер нового ордера
