@@ -1261,10 +1261,37 @@ label[for="review_captcha"]{
 }
 
 /*==== страничка с видео по питанию ====*/
-#video td {
-	margin: 0 auto;
-	vertical-align: top;
+#video {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-around;
 } 
+	.blogVideo{
+		width: 300px;
+		max-width: 300px;
+		margin-bottom: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+		.blogVideo_youtube{
+			position: relative;
+			height: 0px;
+			padding-bottom: 56.29%;
+		}
+			.blogVideo_youtube_iframe{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+			}
+		.blogVideo_title{
+			color: #53a241;
+			text-align: center;
+			font-size: 80%;
+		}
 
 /*==== страничка с описанием комплексной программы ====*/
 .product #head_desc p{

@@ -1,8 +1,8 @@
 AddDefaultCharset UTF-8
 
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www.update24.ru$ [NC]
-RewriteRule ^(.*)$ http://update24.ru/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www.no_online.local$ [NC]
+RewriteRule ^(.*)$ http://no_online.local/$1 [R=301,L]
 
 RewriteBase /
 RewriteCond %{HTTP_HOST} (.*)
